@@ -75,5 +75,15 @@ namespace Dice
             return totalChi;
         }
 
+        public double Average()
+        {
+            double total = 0;
+            for (int i = 1; i <= NumberOfSides; i++)
+            {
+                total = total + FaceTotal[i] * i;
+            }
+            return total / RollTally;
+        }
+
     }
 }

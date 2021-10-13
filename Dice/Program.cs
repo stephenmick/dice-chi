@@ -58,6 +58,7 @@ namespace Dice
                     Console.WriteLine(j + " total: " + faceTotal + " chi squared: " + chiSquared);
                 }
                 Console.WriteLine("Total Chi Squared: " + dice[i].TotalChiSquared());
+                Console.WriteLine("Average: " + dice[i].Average());
                 Console.WriteLine();
             }       
 

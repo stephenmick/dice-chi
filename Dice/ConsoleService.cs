@@ -85,5 +85,23 @@ namespace Dice
                 }
             }
         }
+
+        public void PrintResults(Die[] inputDice)
+        {
+            Die[] dice = inputDice;
+            for (int i = 0; i < dice.Length; i++)
+            {
+                int sides = dice[i].GetNumberOfSides();
+                for (int j = 1; j <= sides; j++)
+                {
+                    double chiSquared = dice[i].ChiSquared(j);
+                    int faceTotal = dice[i].GetFaceTotal(j);
+                    Console.WriteLine(j + " total: " + faceTotal + " chi squared: " + chiSquared);
+                }
+                Console.WriteLine("Total Chi Squared: " + dice[i].TotalChiSquared());
+                Console.WriteLine("Average of all rolls: " + dice[i].Average());
+                Console.WriteLine();
+            }
+        }
     }
 }

@@ -12,3 +12,17 @@ C:\Users\steph\Desktop\Projects\Dice\Dice\Dice\obj\Debug\netcoreapp3.1\Dice.cspr
 C:\Users\steph\Desktop\Projects\Dice\Dice\Dice\obj\Debug\netcoreapp3.1\Dice.dll
 C:\Users\steph\Desktop\Projects\Dice\Dice\Dice\obj\Debug\netcoreapp3.1\Dice.pdb
 C:\Users\steph\Desktop\Projects\Dice\Dice\Dice\obj\Debug\netcoreapp3.1\Dice.genruntimeconfig.cache
+C:\Projects\dice-chi\Dice\bin\Debug\netcoreapp3.1\Dice.exe
+C:\Projects\dice-chi\Dice\bin\Debug\netcoreapp3.1\Dice.deps.json
+C:\Projects\dice-chi\Dice\bin\Debug\netcoreapp3.1\Dice.runtimeconfig.json
+C:\Projects\dice-chi\Dice\bin\Debug\netcoreapp3.1\Dice.runtimeconfig.dev.json
+C:\Projects\dice-chi\Dice\bin\Debug\netcoreapp3.1\Dice.dll
+C:\Projects\dice-chi\Dice\bin\Debug\netcoreapp3.1\Dice.pdb
+C:\Projects\dice-chi\Dice\obj\Debug\netcoreapp3.1\Dice.csproj.AssemblyReference.cache
+C:\Projects\dice-chi\Dice\obj\Debug\netcoreapp3.1\Dice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\dice-chi\Dice\obj\Debug\netcoreapp3.1\Dice.AssemblyInfoInputs.cache
+C:\Projects\dice-chi\Dice\obj\Debug\netcoreapp3.1\Dice.AssemblyInfo.cs
+C:\Projects\dice-chi\Dice\obj\Debug\netcoreapp3.1\Dice.csproj.CoreCompileInputs.cache
+C:\Projects\dice-chi\Dice\obj\Debug\netcoreapp3.1\Dice.dll
+C:\Projects\dice-chi\Dice\obj\Debug\netcoreapp3.1\Dice.pdb
+C:\Projects\dice-chi\Dice\obj\Debug\netcoreapp3.1\Dice.genruntimeconfig.cache

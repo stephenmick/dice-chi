@@ -36,33 +36,29 @@ namespace Dice
                     }
                 }
                 file.Close();
-
             }
             catch (Exception e)
             {
                 throw e;
             }
 
-            //Console.WriteLine("There were " + counter + " lines.");
+            cs.PrintResults(dice);
 
-            //double expected = counter / 20;
-            //int totalRolls = 0;
+            //for (int i = 0; i < dice.Length; i++)
+            //{
+            //    int sides = dice[i].GetNumberOfSides();
+            //    for (int j = 1; j <= sides; j++)
+            //    {
+            //        double chiSquared = dice[i].ChiSquared(j);
+            //        int faceTotal = dice[i].GetFaceTotal(j);
+            //        Console.WriteLine(j + " total: " + faceTotal + " chi squared: " + chiSquared);
+            //    }
+            //    Console.WriteLine("Total Chi Squared: " + dice[i].TotalChiSquared());
+            //    Console.WriteLine("Average: " + dice[i].Average());
+            //    Console.WriteLine();
+            //}       
 
-            for (int i = 0; i < dice.Length; i++)
-            {
-                int sides = dice[i].GetNumberOfSides();
-                for (int j = 1; j <= sides; j++)
-                {
-                    double chiSquared = dice[i].ChiSquared(j);
-                    int faceTotal = dice[i].GetFaceTotal(j);
-                    Console.WriteLine(j + " total: " + faceTotal + " chi squared: " + chiSquared);
-                }
-                Console.WriteLine("Total Chi Squared: " + dice[i].TotalChiSquared());
-                Console.WriteLine("Average: " + dice[i].Average());
-                Console.WriteLine();
-            }       
-
-            // Suspend the screen.  
+            // Suspend the screen  
             Console.ReadLine();
 
         }

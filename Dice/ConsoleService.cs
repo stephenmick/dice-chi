@@ -103,5 +103,42 @@ namespace Dice
                 Console.WriteLine();
             }
         }
+
+        public Die[] PopulateDiceData()
+        {
+            // create a Die bucket to hold each set of die results
+            Die[] dice = new Die[NumberOfDice];
+
+            StreamReader file = new System.IO.StreamReader(FilePath);
+            string line;
+
+            for (int i = 0; i < dice.Length; i++)
+            {
+                Die die = new Die(NumberOfSides);
+                dice[i] = die;
+            }
+
+            try
+            {
+                while ((line = file.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                    string[] data = line.Split(' ');
+                    for (int i = 0; i < data.Length; i++)
+                    {
+                        if (int.TryParse(data[i], out int number))
+                        {
+                            dice[i].AddRoll(number);
+                        }
+                    }
+                }
+                file.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return dice;
+        }
     }
 }

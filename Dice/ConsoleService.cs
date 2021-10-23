@@ -9,14 +9,14 @@ namespace Dice
     {
 
         public string FilePath { get; set; }
-        public int NumberOfDice { get; set;  }
-        public int NumberOfSides { get; set; }
+        public int NumberOfDice { get; set; }
+        public int[] NumberOfSides { get; set; }
 
         public void ImportDataFile()
         {
             GetFilePath();
-            GetNumberOfDice();
-            GetNumberOfSides();
+            int num = GetNumberOfDice();
+            GetNumberOfSides(num);
         }
 
         public void GetFilePath()
@@ -34,23 +34,25 @@ namespace Dice
                     Console.WriteLine("Sorry that file path does not exist.");
                 }
             }
-            FilePath = filePath;           
+            FilePath = filePath;
         }
 
-        private void GetNumberOfDice()
-        {           
+        private int GetNumberOfDice()
+        {
             string input;
+            int returnNumber = 0;
             bool isValidNumber = false;
-            
+
             while (!isValidNumber)
             {
                 Console.WriteLine("How many dice rolls on each line?");
                 input = Console.ReadLine();
                 if (int.TryParse(input, out int number))
-                {                   
+                {
                     if (number > 0 && number <= 10)
                     {
                         NumberOfDice = number;
+                        returnNumber = number;
                         isValidNumber = true;
                     }
                 }
@@ -58,30 +60,37 @@ namespace Dice
                 {
                     Console.WriteLine("Please enter a number from 1 to 10.");
                 }
-            }            
+            }
+
+            return returnNumber;
         }
 
-        private void GetNumberOfSides()
+        private void GetNumberOfSides(int numDice)
         {
 
             string input;
-            bool isValidNumber = false;
+            NumberOfSides = new int[numDice];
 
-            while (!isValidNumber)
+            for (int i = 0; i < numDice; i++)
             {
-                Console.WriteLine("How many sides to each die?");
-                input = Console.ReadLine();
-                if (int.TryParse(input, out int number))
+                bool isValidNumber = false;
+                while (!isValidNumber)
                 {
-                    if (number > 0)
+                    Console.WriteLine("How many sides does die #" + i + " have?");
+                    input = Console.ReadLine();
+                    if (int.TryParse(input, out int number))
                     {
-                        NumberOfSides = number;
-                        isValidNumber = true;
+                        if (number > 0)
+                        {
+                            NumberOfSides[i] = number;
+                            isValidNumber = true;
+                        }
+
                     }
-                }
-                else
-                {
-                    Console.WriteLine("Please enter an integer greater than 0.");
+                    else
+                    {
+                        Console.WriteLine("Please enter an integer greater than 0.");
+                    }
                 }
             }
         }
@@ -109,12 +118,12 @@ namespace Dice
             // create a Die bucket to hold each set of die results
             Die[] dice = new Die[NumberOfDice];
 
-            StreamReader file = new System.IO.StreamReader(FilePath);
+            StreamReader file = new StreamReader(FilePath);
             string line;
 
             for (int i = 0; i < dice.Length; i++)
             {
-                Die die = new Die(NumberOfSides);
+                Die die = new Die(NumberOfSides[i]);
                 dice[i] = die;
             }
 

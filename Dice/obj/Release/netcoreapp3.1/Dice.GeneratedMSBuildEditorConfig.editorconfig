@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 is_global = true
 build_property.RootNamespace = Dice
 build_property.ProjectDir = C:\Projects\dice-chi\Dice\
+=======
+is_global = true
+build_property.RootNamespace = Dice
+build_property.ProjectDir = C:\Projects\dice-chi\Dice\
+>>>>>>> f732cf0d32fda9e76cce42a224a92889e43f02e2

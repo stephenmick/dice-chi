@@ -148,61 +148,6 @@ namespace Dice
                 throw e;
             }
             return dice;
-        }
-
-        public void PrintResults(Die[] inputDice)
-        {
-            Die[] dice = inputDice;
-            for (int i = 0; i < dice.Length; i++)
-            {
-                int sides = dice[i].GetNumberOfSides();
-                for (int j = 1; j <= sides; j++)
-                {
-                    double chiSquared = dice[i].ChiSquared(j);
-                    int faceTotal = dice[i].GetFaceTotal(j);
-                    Console.WriteLine(j + " total: " + faceTotal + " chi squared: " + chiSquared);
-                }
-                Console.WriteLine("Total Chi Squared: " + dice[i].TotalChiSquared());
-                Console.WriteLine("Average of all rolls: " + dice[i].Average());
-                Console.WriteLine();
-            }
-        }
-
-        public Die[] PopulateDiceData()
-        {
-            // create a Die bucket to hold each set of die results
-            Die[] dice = new Die[NumberOfDice];
-
-            StreamReader file = new System.IO.StreamReader(FilePath);
-            string line;
-
-            for (int i = 0; i < dice.Length; i++)
-            {
-                Die die = new Die(NumberOfSides);
-                dice[i] = die;
-            }
-
-            try
-            {
-                while ((line = file.ReadLine()) != null)
-                {
-                    Console.WriteLine(line);
-                    string[] data = line.Split(' ');
-                    for (int i = 0; i < data.Length; i++)
-                    {
-                        if (int.TryParse(data[i], out int number))
-                        {
-                            dice[i].AddRoll(number);
-                        }
-                    }
-                }
-                file.Close();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            return dice;
-        }
+        }       
     }
 }

@@ -38,7 +38,7 @@ namespace Dice
         public int GetFaceTotal(int face)
         {
             int returnTotal = -1;
-            if (face > 0 && FaceTotal.Length >= face)
+            if (face > 0 && FaceTotal.Length > face)
             {
                 returnTotal = FaceTotal[face];
             }
@@ -56,6 +56,11 @@ namespace Dice
 
         public double ChiSquared(int side)
         {
+            // if there is not at least one roll for each side return 0
+            if (RollTally < NumberOfSides)
+            {
+                return 0;
+            }
             double faceChiSquared = -1;
             if (FaceTotal.Length >= side)
             {

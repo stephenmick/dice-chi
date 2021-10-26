@@ -56,10 +56,10 @@ namespace Dice
 
         public double ChiSquared(int side)
         {
-            // if there is not at least one roll for each side return 0
+            // if there is not at least one roll for each side return -1
             if (RollTally < NumberOfSides)
             {
-                return 0;
+                return -1;
             }
             double faceChiSquared = -1;
             if (FaceTotal.Length >= side)
@@ -72,6 +72,11 @@ namespace Dice
 
         public double TotalChiSquared()
         {
+            // if there is not at least one roll for each side return -1
+            if (RollTally < NumberOfSides)
+            {
+                return -1;
+            }
             double totalChi = 0;
             for (int i = 1; i <= NumberOfSides; i++)
             {
